@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  scrapper-db:
+    image: postgis/postgis:15-3.3
+    restart: always
+    container_name: scrapper-db
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5430:5432
